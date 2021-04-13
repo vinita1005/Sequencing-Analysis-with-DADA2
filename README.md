@@ -13,6 +13,11 @@ Here are the Sample types in this dataset:
 
 These sequence files have artifacts and primers already been trimmed off and split into paired forward and reverse reads.
 
+## Pipeline
+As explained above, here we are going to do the denoising step in QIIME2(DADA2) and taxonomy assignment in MOTHUR.
+![image](https://user-images.githubusercontent.com/31128057/114627708-b1a59600-9c83-11eb-8007-9c554d76e3d4.png)
+
+
 ## 1.	Load Environment
 Create and load the environment to work on
 ```
@@ -151,4 +156,13 @@ Lastly, we want to get the final count table with the taxonomy for each unique s
 Use merge_taxonomy_table.py python script
 ### usage ###
 python merge_taxonomy_table.py -t merged_taxonomy.txt -o final_feature_table.txt
+```
+
+## References
+```
+[1] A full example workflow for amplicon data, https://astrobiomike.github.io/amplicon/dada2_workflow_ex
+[2] Amplicon Sequencing Data Analysis with Qiime 2, https://github.com/Gibbons-Lab/isb_course_2020/blob/master/16S_solutions.ipynb
+[3] Current challenges and best-practice protocols for microbiome analysis, https://academic.oup.com/bib/article/22/1/178/5678919
+[4]. A practical guide to amplicon and metagenomic analysis of microbiome data, https://link.springer.com/article/10.1007/s13238-020-00724-8
+[5] Comparing bioinformatic pipelines for microbial 16S rRNA amplicon sequencing, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227434
 ```
