@@ -143,6 +143,11 @@ RDP however is executed on MOTHUR since I found that sklearns in qiime2 has only
 ```
 classify.seqs(fasta=../dna-sequences.good.filter.fasta, count=../feature-table.userLabel.userLabel.count_table, reference=../reference_dbs/HOMD_16S_rRNA_RefSeq_V15.22.fasta, taxonomy=../reference_dbs/HOMD_16S_rRNA_RefSeq_V15.22.mothur.taxonomy, cutoff=97)
 ```
+Sometimes, the RDP taxonomy has some prefixs (k__, s__, etc) to identify levels of taxonomy or some suffixes ([100],[99],etc) to indicate the confidence value. These must be removed to maintain a proper format for the taxonomy file. This is done using the remove_rdp_prefix.py python script.
+```
+### usage ###
+python remove_rdp_prefix.py -t rdp_taxonomy.txt
+```
 
 In the end, I combined the two taxonomy files that I got such that, the sequences which are unassigned at the species level in blast taxonomy, will be replaced by the taxonomy found in RDP. The python script merge_blast_rdp.py does this step.
 ```
