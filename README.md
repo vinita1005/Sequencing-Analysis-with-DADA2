@@ -166,7 +166,11 @@ python merge_taxonomy_table.py -t merged_taxonomy.txt -o final_feature_table.txt
 ## References
 
 [1] A full example workflow for amplicon data, https://astrobiomike.github.io/amplicon/dada2_workflow_ex
+
 [2] Amplicon Sequencing Data Analysis with Qiime 2, https://github.com/Gibbons-Lab/isb_course_2020/blob/master/16S_solutions.ipynb
+
 [3] Current challenges and best-practice protocols for microbiome analysis, https://academic.oup.com/bib/article/22/1/178/5678919
+
 [4]. A practical guide to amplicon and metagenomic analysis of microbiome data, https://link.springer.com/article/10.1007/s13238-020-00724-8
+
 [5] Comparing bioinformatic pipelines for microbial 16S rRNA amplicon sequencing, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227434
