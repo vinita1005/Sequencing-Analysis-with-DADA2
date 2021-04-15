@@ -15,7 +15,9 @@ These sequence files have artifacts and primers already been trimmed off and spl
 
 ## Pipeline
 As explained above, here we are going to do the denoising step in QIIME2(DADA2) and taxonomy assignment in MOTHUR.
-<img src="https://user-images.githubusercontent.com/31128057/114905195-ad45be00-9de6-11eb-9b48-112f7b59ea23.png" width="379" height="520">
+![image](https://user-images.githubusercontent.com/31128057/114906300-e4689f00-9de7-11eb-82fd-dd91177227fd.png)
+
+
 
 ## 1.	Load Environment
 Create and load the environment to work on
