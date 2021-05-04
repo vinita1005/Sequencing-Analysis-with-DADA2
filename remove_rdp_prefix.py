@@ -7,10 +7,14 @@ parser = argparse.ArgumentParser(description='Remove prefixes in rdp taxonomy')
 parser.add_argument('-t', '--taxonomy', nargs='+', help='space seperated parsed taxonomy file', required=True)
 
 args = parser.parse_args()
+
+
 def remove_prefix(df):
     print("Starting process")
+
+    df.columns = ['#Sequence ID','taxonomy']
     cols = df.columns.tolist()
-    with open('transformed_rdp_taxonomy_97.txt', 'w', newline='') as csvfile1:
+    with open('transformed_rdp_taxonomy.txt', 'w', newline='') as csvfile1:
         writer = csv.writer(csvfile1, delimiter='\t')
         writer.writerow([header for header in cols])
         for index, row in df.iterrows():
@@ -18,11 +22,13 @@ def remove_prefix(df):
             # temp_taxa = row['taxonomy'].replace("(*)","")
             temp_taxa = re.sub(r"\(\d+\)", '', row['taxonomy'])
             row['taxonomy'] = temp_taxa
-            writer = csv.writer(csvfile1, delimiter='\t')
+            # writer = csv.writer(csvfile1, delimiter='\t')
             writer.writerow(row)
 
-    print("Saving file")
+    print("Saving file to transformed_rdp_taxonomy.txt")
+
+
 if __name__ == '__main__':
     print(args.taxonomy[0])
-    df = pd.read_csv(args.taxonomy[0], delimiter='\t')
+    df = pd.read_csv(args.taxonomy[0], delimiter='\t', header=None)
     remove_prefix(df)

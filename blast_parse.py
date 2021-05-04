@@ -28,6 +28,7 @@ if __name__ == '__main__':
                 res_dict[query_id] = [target_id,str(identity),str(coverage)]
 
     columns = [os.path.splitext(os.path.basename(args.input_fp))[0]]
+    # res_df = pd.DataFrame.from_dict(res_dict, orient='index', columns=['Target','Identify','Coverage']).rename_axis('#Sequence ID').reset_index()
     res_df = pd.DataFrame.from_dict(res_dict, orient='index')
     res_df.columns = ['Target','Identify','Coverage']
     res_df.to_csv(args.output_fp, sep='\t')
