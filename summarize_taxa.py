@@ -21,8 +21,26 @@ def get_seq_count(df, classes):
         result_reads[taxa_class] = df_filtered['total'].sum()
     print("# Unique sequences: ", result_seqs)
     print("# Reads: ", result_reads)
+    print_pretty(result_seqs, result_reads)
 
-
+def print_pretty(result_seqs, result_reads):
+    print("--------------------------------------------------------------------------")
+    print("# Unique sequences:")
+    print("--------------------------------------------------------------------------")
+    for key in result_seqs.keys():
+        print("{}\t".format(key), end =" "),
+    print("\n# Reads:")
+    for items in result_seqs.values():
+        print("{}\t".format(items), end =" "),
+    print("\n--------------------------------------------------------------------------")
+    print("# Reads:")
+    print("--------------------------------------------------------------------------")
+    for key in result_reads.keys():
+        print("{}\t".format(key), end =" "),
+    print("\n")
+    for items in result_reads.values():
+        print("{}\t".format(items), end =" "),
+    print("\n")
 if __name__ == '__main__':
 
     print("Reading file...")
