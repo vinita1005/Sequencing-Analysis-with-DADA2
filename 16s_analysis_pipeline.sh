@@ -110,9 +110,11 @@ echo 'Feature table creation complete...'
 echo 'Saved file to: final_feature_table.txt'
 
 echo '-------------------------------------------------------------------------'
-echo 'STEP 12: Summarizing results...'
+echo 'STEP 12: Calculating final counts...'
 echo '-------------------------------------------------------------------------'
-python summarize_taxa.py -t final_feature_table.txt
+python count_summary.py -t final_feature_table.txt
+
+
 
 END=`date +%s`
 ELAPSED=$(( $END - $START ))
